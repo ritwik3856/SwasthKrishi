@@ -1,0 +1,98 @@
+{
+    "Potato___Early_blight" : [
+        {
+            "solution1" : "Remove all garden crop residue, a thorough cleanup is essential.",
+            "solution2" : "Rotate crops when possible.",
+            "solution3" : "Control insects as Aphids and White flies can spread diseases."
+        }
+    ],
+    "Potato___Late_Blight" : [
+        {
+            "solution1" : "It is controlled by eliminating cull piles and volunteer potatoes, using proper harvesting and storage practices.",
+            "solution2" : "Apply fungicides when necessary.",
+            "solution3" : "Air drainage to facilitate the drying of foliage each day is important."
+        }
+    ],
+    "Healthy" : [
+        {
+            
+            "solution1" : "",
+            "solution2" : "",
+            "solution3" : ""
+        }
+    ],
+    "Tomato_Bacterial_spot" : [
+        {
+            "solution1" : "A plant with bacterial spot cannot be cured.",
+            "solution2" : "Remove symptomatic plants from the field or greenhouse to prevent the spread of bacteria to Healthy plants.",
+            "solution3" : "Keep all the fallen debris and dead fruit cleaned up and away from the tree."
+        }
+    ],
+    "Tomato_Early_blight" : [
+        {
+            "solution1" : "Try resistant varieties, which are new but very worthwhile.",
+            "solution2" : "Grow tomatoes at wide spacing in full sun, so their leaves dry promptly each morning and after rains.",
+            "solution3" : "Avoid wetting the foliage when watering tomatoes."
+        }
+    ],
+    "Tomato_Late_blight" : [
+        {
+            
+            "solution1" : "Sanitation is the first step in controlling tomato late blight.",
+            "solution2" : "Clean up all debris and fallen fruit from the garden area.",
+            "solution3" : "Fungicides that contain maneb, mancozeb, chlorothanolil, or fixed copper can help protect plants from late tomato blight."
+        }
+    ],
+    "Tomato_Leaf_Mold" : [
+        {
+            
+            "solution1" : "When planting, use only certified disease-free seed or treated seed.",
+            "solution2" : "Remove and destroy all crop debris post-harvest.",
+            "solution3" : "Use fans and avoid overhead watering to minimize leaf wetness. Also, stake and prune plants to increase ventilation."
+        }
+    ],
+    "Tomato_Septoria_leaf_spot" : [
+        {
+            "solution1" : "Pinch off leaves with leaf spots and bury them in the compost pile.",
+            "solution2" : "Do not remove more than a third of the plant's leaves.",
+            "solution3" : "Keep leaves dry to reduce spreading the disease."
+        }
+    ],
+    "Tomato_Spider_mites_Two_spotted_spider_mite" : [
+        {
+            
+            "solution1" : "Avoid continuous cropping of tomato and related plants which makes it difficult to control red spider mites.",
+            "solution2" : "Spray water regularly on plants to reduce dust, spider mites do well in dusty conditions.",
+            "solution3" : "You can also use miticides which are specific for mites e.g. Dynamec (active ingredient abamectin), Oberon (spiromesifen) or Omite (propargite)."
+        }
+    ],
+    "Tomato__Target_Spot" : [
+        {
+            "solution1" : "Rotate crops and don’t plant tomatoes in areas where other disease-prone plants have been located in the past year.",
+            "solution2" : "Water tomato plants in the morning so the leaves have time to dry.",
+            "solution3" : "Remove old plant debris at the end of the growing season, otherwise, the spores will travel from debris to newly planted tomatoes in the following growing season."
+        }
+    ],
+    "Tomato__Tomato_YellowLeaf__Curl_Virus" : [
+        {
+            "solution1" : "Use only virus-and whitefly-free tomato and transplants.",
+            "solution2" : "Imidacloprid or thiamethoxam should be used in transplant houses at least seven days before shipping.",
+            "solution3" : "Transplants should be treated with Capture (bifenthrin) or Venom (dinotefuran) "
+        }
+    ],
+    "Tomato__Tomato_mosaic_virus" : [
+        {
+            
+            "solution1" : "There is no cure for the Mosaic Virus.",
+            "solution2" : "Disinfect gardening tools after every use.",
+            "solution3" : "Remove all infected plants and destroy them. Do not put them in the compost pile, as the virus may persist in infected plant matter."
+        }
+    ],
+    "Pepper__bell___Bacterial_spot" : [
+        {
+            "solution1" : "Using resistant varieties such as, F1 of Autry, Green Flash, Labelle, Ninja, Outsider, Playmaker, Prowler, Raven, Samurai etc.",
+            "solution2" : "Wash seeds for 40 minutes in diluted Clorox (two parts Clorox plus eight parts water) to reduce the bacterial population. ",
+            "solution3" : "Copper sprays can be used to control bacterial leaf spot."
+        }
+    ]
+}
