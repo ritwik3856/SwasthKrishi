@@ -8,7 +8,18 @@ import tensorflow as tf
 
 app=FastAPI()
 
-
+#add and handling chors
+origins = [
+    "https://localhost",
+    "http://localhost:3000"
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 Model=tf.keras.models.load_model("../saved_models/3")
 CLASS_NAMES=['Pepper__bell___Bacterial_spot',
@@ -48,14 +59,24 @@ async def predict(  #here function name can be different it is not necessary tha
     predicted_class=CLASS_NAMES[np.argmax(prediction[0])]  #prediction[0] gives the 1st image of the batch
     confidence=np.max(prediction[0])
 
-    
+    disdata=json.load(open("C:\\Users\\KIIT\\OneDrive\\Desktop\\College\\Sem-6\\Minor Project\\CODE1\\CODE1\\potato_disease\\training\\data1.json"))
 
-
-
+    prediction = str(predicted_class)
+    # Filter the data based on the prediction
+    # filtered_data = [d for d in data if d[0] == "Potato___Early_blight"]
+    dissol1 = disdata[prediction][0]['solution1']
+    dissol2 = disdata[prediction][0]['solution2']
+    dissol3 = disdata[prediction][0]['solution3']
+    # print(filtered_data)
+    return {
+        'class':predicted_class,
+        'confidence':float(confidence),
+        'dis1':dissol1,
+        'dis2':dissol2,
+        'dis3':dissol3,
+    }
     
-    
-    
-  
+    pass
 
 if __name__=="__main__":
     uvicorn.run(app, host='localhost', port=8000)
