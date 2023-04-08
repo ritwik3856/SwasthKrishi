@@ -3,12 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn, json
 import numpy as np
 from io import BytesIO
-from PIL import Image  #used to read images
+from PIL import Image  
 import tensorflow as tf
 
 app=FastAPI()
 
-#add and handling chors
+
 origins = [
     "https://localhost",
     "http://localhost:3000"
@@ -38,42 +38,43 @@ CLASS_NAMES=['Pepper__bell___Bacterial_spot',
  'Tomato__Tomato_mosaic_virus',
  'Tomato_healthy']      
 
-#to check wheather our server is running or not
+
 @app.get("/")  
 async def ping():
     return "Hello"
 
-def read_file_as_image(data)->np.ndarray:  #takes bytes as an input and return np.ndarray as output
-    image=np.array(Image.open(BytesIO(data)))  #Image.open() converts bytes data into pillow image, np.array() converts that pillow image to numpy
+def read_file_as_image(data)->np.ndarray:  
+    image=np.array(Image.open(BytesIO(data)))  
     return image
 
 #main entry point
 @app.post("/predict")
-async def predict(  #here function name can be different it is not necessary that it should be same
-    file: UploadFile = File(...)   #after colon specifies the datatype(UploadFile) of variable(here file) 
+async def predict( 
+    file: UploadFile = File(...)   
 ):
-    #converting image into numpy or tensor so that we can do our prediction
-    image=read_file_as_image(await file.read())    #file.read() will convert data into bytes
-    image_batch=np.expand_dims(image, 0)  #expanding dimension from 1D to 2D so that it can take the multiple images as input
+    
+    image=read_file_as_image(await file.read())   
+    image_batch=np.expand_dims(image, 0)  
     prediction=Model.predict(image_batch)
-    predicted_class=CLASS_NAMES[np.argmax(prediction[0])]  #prediction[0] gives the 1st image of the batch
+    predicted_class=CLASS_NAMES[np.argmax(prediction[0])]  
     confidence=np.max(prediction[0])
 
-    disdata=json.load(open("C:\\Users\\KIIT\\OneDrive\\Desktop\\College\\Sem-6\\Minor Project\\CODE1\\CODE1\\potato_disease\\training\\data1.json"))
+    disdata=json.load(open("C:\\Users\\KIIT\\OneDrive\\Desktop\\College\\Sem-6\\Minor Project\\Disease-detection\\training\\data1.json"))
 
     prediction = str(predicted_class)
-    # Filter the data based on the prediction
-    # filtered_data = [d for d in data if d[0] == "Potato___Early_blight"]
-    dissol1 = disdata[prediction][0]['solution1']
-    dissol2 = disdata[prediction][0]['solution2']
-    dissol3 = disdata[prediction][0]['solution3']
-    # print(filtered_data)
+    
+    caused = disdata[prediction][0]["What caused it?"]
+    chem_cont = disdata[prediction][0]["Chemical Control"]
+    prev_meas = disdata[prediction][0]["Preventive Measures"]
+    med = disdata[prediction][0]["Medicines"]
+    
     return {
         'class':predicted_class,
         'confidence':float(confidence),
-        'dis1':dissol1,
-        'dis2':dissol2,
-        'dis3':dissol3,
+        'caused':caused,
+        'chem_cont':chem_cont,
+        'prev_meas':prev_meas,
+        'med':med,
     }
     
     pass
