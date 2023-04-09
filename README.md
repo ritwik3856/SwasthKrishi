@@ -17,3 +17,23 @@ Introducing SwasthKrishi - an innovative solution that simplifies the process of
 * At present, our model can predict diseases in popular plants such as pepper, potato, and tomato. However, we plan to expand its capabilities to predict diseases in many more plants in the near future.
 
 * By providing users with accurate disease predictions and customized treatment methods, our website helps farmers protect their crops and optimize their yields. With the latest technology and a user-friendly interface, our platform empowers farmers with the knowledge and tools they need to improve their crop health and increase their profits.
+
+
+### Installation
+
+1. Clone repo
+
+    ```bash
+    git clone https://github.com/ritwik3856/SwasthKrishi.git
+    cd SwasthKrishi
+    ```
+2. Install dependent packages
+    ```bash
+    pip install -r requirements.txt
+   ```
+
+### Run the program
+   ```
+   npm run start
+   ``
+

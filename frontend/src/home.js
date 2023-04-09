@@ -209,7 +209,6 @@ export const ImageUpload = () => {
   }
 
   if (data) {
-    confidence = (parseFloat(data.confidence) * 100).toFixed(2);
     caused = data.caused;
     chem_cont = data.chem_cont;
     prev_meas = data.prev_meas;
@@ -273,7 +272,7 @@ export const ImageUpload = () => {
                     <TableHead className={classes.tableHead}>
                       <TableRow className={classes.tableRow}>
                         <TableCell className={classes.tableCell1}>Label:</TableCell>
-                        <TableCell align="right" className={classes.tableCell1}>Confidence:</TableCell>
+                        <TableCell align="right" className={classes.tableCell1}></TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody className={classes.tableBody}>
@@ -282,7 +281,7 @@ export const ImageUpload = () => {
                           {data.class}
 
                         </TableCell>
-                        <TableCell align="right" className={classes.tableCell}>{confidence}%</TableCell>
+                        <TableCell align="right" className={classes.tableCell}></TableCell>
                       </TableRow>
                     </TableBody>
                   </Table>

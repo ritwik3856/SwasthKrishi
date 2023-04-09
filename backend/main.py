@@ -21,7 +21,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-Model=tf.keras.models.load_model("../saved_models/3")
+Model=tf.keras.models.load_model("../saved_models/5")
+
 CLASS_NAMES=['Pepper__bell___Bacterial_spot',
  'Pepper__bell___healthy',
  'Potato___Early_blight',
@@ -57,9 +58,8 @@ async def predict(
     image_batch=np.expand_dims(image, 0)  
     prediction=Model.predict(image_batch)
     predicted_class=CLASS_NAMES[np.argmax(prediction[0])]  
-    confidence=np.max(prediction[0])
 
-    disdata=json.load(open("C:\\Users\\KIIT\\OneDrive\\Desktop\\College\\Sem-6\\Minor Project\\Disease-detection\\training\\data1.json"))
+    disdata=json.load(open("C:\\Users\\KIIT\\OneDrive\\Desktop\\Hackfest\\Disease-detection\\training\\data1.json"))
 
     prediction = str(predicted_class)
     
@@ -70,14 +70,12 @@ async def predict(
     
     return {
         'class':predicted_class,
-        'confidence':float(confidence),
         'caused':caused,
         'chem_cont':chem_cont,
         'prev_meas':prev_meas,
         'med':med,
     }
-    
-    pass
+
 
 if __name__=="__main__":
     uvicorn.run(app, host='localhost', port=8000)

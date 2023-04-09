@@ -1,0 +1,17 @@
+tensorflow
+fastapi
+uvicorn
+python-multipart
+pillow
+tensorflow-serving-api
+matplotlib
+numpy
+fastapi.middleware.cors
+numpy
+BytesIO
+Image
+Nodejs
+Reactjs
+Material-Ui
+web-vitals
+axios
